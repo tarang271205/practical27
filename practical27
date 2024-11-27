@@ -1,0 +1,49 @@
+Program: 27 Imagine a situation where two values need to be swapped within a banking system, 
+such as updating balances between two accounts after a transaction. Make use of 
+pointer as function arguments for swapping function. 
+Code: #include <stdio.h> 
+#include <stdlib.h> 
+ 
+// Function to swap two values using pointers 
+void swap(float *a, float *b) { 
+    float temp = *a; 
+    *a = *b; 
+    *b = temp; 
+} 
+ 
+int main() { 
+    float *account1, *account2; 
+ 
+    // Dynamically allocate memory for account balances 
+    account1 = (float *)malloc(sizeof(float)); 
+    account2 = (float *)malloc(sizeof(float)); 
+ 
+    if (account1 == NULL || account2 == NULL) { 
+        printf("Memory allocation failed!\n"); 
+        return 1; // Exit the program if memory allocation fails 
+    } 
+ 
+    // Input initial balances 
+    printf("Enter balance for Account 1: "); 
+    scanf("%f", account1); 
+    printf("Enter balance for Account 2: "); 
+    scanf("%f", account2); 
+ 
+    printf("\nBefore Swap:\n"); 
+    printf("Account 1 Balance: %.2f\n", *account1); 
+    printf("Account 2 Balance: %.2f\n", *account2); 
+ 
+    // Call swap function 
+    swap(account1, account2); 
+ 
+    printf("\nAfter Swap:\n"); 
+    printf("Account 1 Balance: %.2f\n", *account1); 
+    printf("Account 2 Balance: %.2f\n", *account2); 
+ 
+    // Free allocated memory 
+    free(account1); 
+    free(account2); 
+    printf("\n\n24ce032_TARANG");
+
+       return 0; 
+}
